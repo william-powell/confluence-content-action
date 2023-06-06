@@ -6920,7 +6920,7 @@ const getCurrentPage = async (auth, space_key, content_id, confluence_base_url) 
         var details = await response.json();
 
         return details;
-        
+
     } catch (error) {
         core.setFailed(error.message);
     }
@@ -6970,7 +6970,7 @@ const updatePage = async (auth, space_key, content_id, confluence_base_url, html
             await trimVersions(auth, space_key, content_id, confluence_base_url, max_versions, currentVersion);
         }
 
-        console.log(response.json());
+        console.log(await response.json());
     }
     catch (error) {
         core.setFailed(error.message);
