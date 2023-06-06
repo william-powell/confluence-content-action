@@ -33,7 +33,7 @@ const trimVersions = async (auth, space_key, content_id, confluence_base_url, ma
     if (currentVersion < max_versions) {
         console.log('Current version is less than max versions.');
         return;
-    }ß
+    }
 
     versionsToDelete = currentVersion - max_versions - 1;
 
