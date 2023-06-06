@@ -23,5 +23,5 @@ inputs:
     description: 'The maximum number of versions to keep. (default: 10)'
     default: "10"
 runs:
-  using: 'node16'
+  using: 'node18'
   main: 'index.js'
