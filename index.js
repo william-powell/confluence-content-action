@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const https = require('https');
-
+const fetch = require('node-fetch');
 
 const main = async () => {
     try {
