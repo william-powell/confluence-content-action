@@ -1,0 +1,27 @@
+name: 'Update Confluence Content'
+description: 'Updates an existing Confluence Cloud page with provided HTML'
+inputs:
+  content_id:
+    description: 'The content id of the Confluence page to update'
+    required: true
+  space_key:
+    description: 'The space key of the Confluence page to update'
+    required: true
+  confluence_username:
+    description: 'The username of the Confluence user to authenticate with'
+    required: true
+  confluence_api_key:
+    description: 'The api key of the Confluence user to autheniticate with'
+    required: true
+  confluence_base_url:
+    description: 'The base url of the Confluence instance'
+    required: true
+  html_content:
+    description: 'The HTML content to post to the Confluence page'
+    required: true
+  max_versions:
+    description: 'The maximum number of versions to keep. (default: 10)'
+    default: "10"
+runs:
+  using: 'node16'
+  main: 'index.js'
