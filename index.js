@@ -81,6 +81,7 @@ const getCurrentPage = async (auth, space_key, content_id, confluence_base_url) 
         var details = await response.json();
 
         return details;
+        
     } catch (error) {
         core.setFailed(error.message);
     }
@@ -93,6 +94,8 @@ const updatePage = async (auth, space_key, content_id, confluence_base_url, html
         console.log('Updating content');
 
         currentVersion = pageDetails.version.number;
+
+        console.log(`Current version: ${currentVersion}`);
 
         data = {
             id: content_id,
@@ -127,6 +130,8 @@ const updatePage = async (auth, space_key, content_id, confluence_base_url, html
         if (response.ok) {
             await trimVersions(auth, space_key, content_id, confluence_base_url, max_versions, currentVersion);
         }
+
+        console.log(response.json());
     }
     catch (error) {
         core.setFailed(error.message);
